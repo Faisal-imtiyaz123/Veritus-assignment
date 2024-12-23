@@ -18,3 +18,8 @@ export enum AccordionIds {
     MAIN_TAB="MAIN_TAB",
     SUB_TAB="SUB_TAB",
 }
+export type AccordionData = {
+  accordionTitle: string;
+  accordionBodyHeading: string;
+  accordionBodyContent: string[];
+};

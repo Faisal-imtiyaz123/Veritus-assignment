@@ -24,24 +24,85 @@ export const ACCORDION_SUB_NAVBAR_TABS= {
     [AccordionNavbarTabs.ManuscriptAnalysis]: [AccordionSubNavbarTabs.SubTab1],
     [AccordionNavbarTabs.Concise]: [AccordionSubNavbarTabs.SubTab2,AccordionSubNavbarTabs.SubTab3],
 };
-export const ACCORDION_SUB_NAVBAR_TAB_ACCORDION =[
-  {
-    [AccordionSubNavbarTabs.SubTab1]:{
-      heading:"Sub Tab 1 in Detail",
-      content:["Sub Tab 1 in Detail", "Sub Tab 2 in Detail", "Sub Tab 3 in Detail"]
-    }
+export const ACCORDION_STRUCTURE = {
+  [AccordionNavbarTabs.QA]: {
+    subTabs: {
+      [AccordionSubNavbarTabs.SubTab1]: {
+        heading: "Sub Tab 1 In Detail",
+        accordionItems: [
+          {
+            accordionTitle: "Accordion 1",
+            accordionBodyHeading: "Accordion 1 Heading",
+            accordionBodyContent: [
+              "Accordion 1 Content 1",
+              "Accordion 1 Content 2",
+              "Accordion 1 Content 3",
+            ],
+          },
+        ],
+      },
+      [AccordionSubNavbarTabs.SubTab2]: {
+        heading: "Sub Tab 2 In Detail",
+        accordionItems: [
+          {
+            accordionTitle: "Accordion 2",
+            accordionBodyHeading: "Accordion 2 Heading",
+            accordionBodyContent: [
+              "Accordion 2 Content 1",
+              "Accordion 2 Content 2",
+            ],
+          },
+        ],
+      },
+    },
   },
-  {
-    [AccordionSubNavbarTabs.SubTab2]:{
-      heading:"Sub Tab 2 in Detail",
-      content:["Sub Tab 1 in Detail", "Sub Tab 2 in Detail", "Sub Tab 3 in Detail"]
-    }
+  [AccordionNavbarTabs.ManuscriptAnalysis]: {
+    subTabs: {
+      [AccordionSubNavbarTabs.SubTab1]: {
+        heading: "Sub Tab 1 Manuscript Analysis",
+        accordionItems: [
+          {
+            accordionTitle: "Accordion 3",
+            accordionBodyHeading: "Accordion 3 Heading",
+            accordionBodyContent: [
+              "Accordion 3 Content 1",
+              "Accordion 3 Content 2",
+            ],
+          },
+        ],
+      },
+    },
   },
-  {
-    [AccordionSubNavbarTabs.SubTab3]:{
-      heading:"Sub Tab 3 in Detail",
-      content:["Sub Tab 1 in Detail", "Sub Tab 2 in Detail", "Sub Tab 3 in Detail"]
-    }
-  }
-]
+  [AccordionNavbarTabs.Concise]: {
+    subTabs: {
+      [AccordionSubNavbarTabs.SubTab2]: {
+        heading: "Sub Tab 2 Concise",
+        accordionItems: [
+          {
+            accordionTitle: "Accordion 4",
+            accordionBodyHeading: "Accordion 4 Heading",
+            accordionBodyContent: [
+              "Accordion 4 Content 1",
+              "Accordion 4 Content 2",
+            ],
+          },
+        ],
+      },
+      [AccordionSubNavbarTabs.SubTab3]: {
+        heading: "Sub Tab 3 Concise",
+        accordionItems: [
+          {
+            accordionTitle: "Accordion 5",
+            accordionBodyHeading: "Accordion 5 Heading",
+            accordionBodyContent: [
+              "Accordion 5 Content 1",
+              "Accordion 5 Content 2",
+              "Accordion 5 Content 3",
+            ],
+          },
+        ],
+      },
+    },
+  },
+};
 
