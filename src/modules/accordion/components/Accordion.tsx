@@ -25,9 +25,8 @@ const AccordionRenderer = () => {
   const subTab = useRecoilValue(
     createActiveAccordionNavBarAtom(AccordionIds.SUB_TAB)
   );
-  //@ts-expect-error will figure out a solution later
-  const accordionData: AccordionData[] =
-    ACCORDION_STRUCTURE[mainTab]?.subTabs[subTab]?.accordionItems;
+  //@ts-expect-error will find a solution later
+  const accordionData: AccordionData[] = ACCORDION_STRUCTURE[mainTab]?.subTabs[subTab]?.accordionItems;
   return (
     <AccordionContainer>
       {accordionData?.map((item, index) => (
