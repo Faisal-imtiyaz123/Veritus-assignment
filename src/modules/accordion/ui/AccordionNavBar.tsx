@@ -5,7 +5,7 @@ export const AccordionNavBarContainer = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+  padding: 10px 0px;
   background-color: #fff;
 `;
 
@@ -32,4 +32,10 @@ export const AccordionNavBarTab = styled.div<{ isActive: boolean }>`
   border-bottom: ${(props) =>
     props.isActive ? "2px solid navy" : "2px solid transparent"};
   transition: color 0.3s ease, border-bottom 0.3s ease;
+`;
+export const ArrowContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;  /* Added gap between the arrow and the tabs */
 `;

@@ -14,8 +14,6 @@ export const AccordionContainer = styled.div`
 `;
 
 export const AccordionItem = styled.div`
-  border-bottom: 1px solid #ddd;
-
   &:last-child {
     border-bottom: none;
   }
@@ -52,11 +50,12 @@ export const AccordionArrow = styled.span<AccordionProps>`
 `;
 
 export const AccordionContent = styled.div<AccordionProps>`
-  padding: 16px;
   font-size: 16px;
   background: #fff;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   animation: ${({ isOpen }) => (isOpen ? "fadeIn 0.3s ease-in-out" : "none")};
+  padding: 16px 0px;
+  margin-left: 4px;
 
   @keyframes fadeIn {
     from {
@@ -64,6 +63,30 @@ export const AccordionContent = styled.div<AccordionProps>`
     }
     to {
       opacity: 1;
+    }
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: normal;
+    display: block;
+    margin-bottom: 8px;
+  }
+  div{
+    margin-top: 8px;
+  }
+
+  div {
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 1.4;
+      margin-bottom: 4px;
+      margin-left: 10px;
     }
   }
 `;

@@ -7,7 +7,7 @@ import { ACCORDION_STRUCTURE} from "../lib/constants";
 import { createActiveAccordionNavBarAtom } from "../state/activeAccordionNavBarAtomFamily";
 import { AccordionData, AccordionIds } from "../types/accordion.types";
 import { useRecoilValue } from "recoil";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import {  ChevronDown, ChevronUp } from "lucide-react";
 
 
 const AccordionRenderer = () => {
@@ -27,19 +27,18 @@ const AccordionRenderer = () => {
           <AccordionHeader onClick={() => handleToggle(index)}>
             {item.accordionTitle}
             {openIndex === index ? (
-              <ChevronDown size={20} />
+              <ChevronUp size={20} />
             ) : (
-              <ChevronRight size={20} />
+              <ChevronDown size={20} />
             )}
-            {/* <AccordionArrow isOpen={openIndex === index}>⮟</AccordionArrow> */}
           </AccordionHeader>
           <AccordionContent isOpen={openIndex === index}>
-            <h4>{item.accordionBodyHeading}</h4>
-            <ul>
+            <span>{item.accordionBodyHeading}</span>
+            <div>
               {item.accordionBodyContent.map((content, idx) => (
                 <li key={idx}>{content}</li>
               ))}
-            </ul>
+            </div>
           </AccordionContent>
         </AccordionItem>
       ))}

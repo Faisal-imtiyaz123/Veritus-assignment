@@ -9,5 +9,5 @@ export const useResetSubTab = ()=>{
     const resetSubTabState= useResetRecoilState(createActiveAccordionNavBarAtom(AccordionIds.SUB_TAB))
     useEffect(()=>{
     resetSubTabState()
-    },[mainTabState])
+    },[mainTabState,resetSubTabState])
 }

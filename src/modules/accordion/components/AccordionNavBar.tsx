@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import { ArrowLeft , ArrowRight} from 'lucide-react';
-import { AccordionNavBarContainer, AccordionNavBarTab, AccordionNavBarTabsContainer } from "../ui/AccordionNavBar";
+import { ChevronLeft, ChevronRight} from 'lucide-react';
+import { AccordionNavBarContainer, AccordionNavBarTab, AccordionNavBarTabsContainer, ArrowContainer } from "../ui/AccordionNavBar";
 import useHorizantalScroll from "../hooks/useHorizantalScroll";
 import { useRecoilState } from "recoil";
 import { AccordionNavBarProps } from "../types/accordion.types";
@@ -18,8 +18,10 @@ const AccordionNavBar = <T extends string[],>({
   const [activeTab, setActiveTab] = useRecoilState(createActiveAccordionNavBarAtom(id))
   useResetSubTab()
     return (
-      <AccordionNavBarContainer >
-        {(isAtRightEnd || !isAtLeftEnd)&& <ArrowLeft  onClick={scrollLeft}/>}
+      <AccordionNavBarContainer>
+      <ArrowContainer>
+      {(isAtRightEnd || !isAtLeftEnd)&& <ChevronLeft size={20}  onClick={scrollLeft}/>}
+      </ArrowContainer>
         <AccordionNavBarTabsContainer ref={accordionNavBarRef}>
             {tabs?.map((tab,index) => (
             <AccordionNavBarTab key={index} isActive={activeTab === tab } onClick={() => setActiveTab(tab)}>
@@ -27,7 +29,9 @@ const AccordionNavBar = <T extends string[],>({
             </AccordionNavBarTab>
             ))}
         </AccordionNavBarTabsContainer>
-        { (isAtLeftEnd || !isAtRightEnd) &&  <ArrowRight onClick={scrollRight}/>}
+        <ArrowContainer>
+        { (isAtLeftEnd || !isAtRightEnd) &&  <ChevronRight size={20} onClick={scrollRight}/>}
+        </ArrowContainer>
       </AccordionNavBarContainer>
     );
 } 

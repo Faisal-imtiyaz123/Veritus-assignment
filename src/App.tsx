@@ -7,11 +7,12 @@ import { useRecoilValue } from "recoil";
 import { createActiveAccordionNavBarAtom } from "./modules/accordion/state/activeAccordionNavBarAtomFamily";
 import {  AccordionNavBarTabsType } from "./modules/accordion/types/constants.types";
 import AccordionRenderer from "./modules/accordion/components/Accordion";
+import { AccordionWrapper } from "./modules/accordion/ui/AccordionWrapper";
 
 const App = () => {
   const activeParentTab = useRecoilValue(createActiveAccordionNavBarAtom<AccordionNavBarTabsType>(AccordionIds.MAIN_TAB));
   return (
-    <div style={{ maxWidth: "50rem", border: "1px solid #ccc" }}>
+    <AccordionWrapper>
       <GlobalStyles />
       <AccordionNavBar
         tabs={ACCORDION_NAVBAR_TABS}
@@ -22,7 +23,7 @@ const App = () => {
           id={AccordionIds.SUB_TAB}
         />
         <AccordionRenderer/>
-    </div>
+    </AccordionWrapper>
   );
 };
 
