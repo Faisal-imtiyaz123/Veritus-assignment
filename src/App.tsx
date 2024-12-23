@@ -9,7 +9,7 @@ import {  AccordionNavBarTabsType } from "./modules/accordion/types/constants.ty
 import AccordionRenderer from "./modules/accordion/components/Accordion";
 
 const App = () => {
-  const activeParentTab = useRecoilValue(createActiveAccordionNavBarAtom<AccordionNavBarTabsType>(AccordionIds.MAIN_TAB,ACCORDION_NAVBAR_TABS));
+  const activeParentTab = useRecoilValue(createActiveAccordionNavBarAtom<AccordionNavBarTabsType>(AccordionIds.MAIN_TAB));
   return (
     <div style={{ maxWidth: "50rem", border: "1px solid #ccc" }}>
       <GlobalStyles />

@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { AccordionContainer } from "../ui/AccordionNavBarTabAccordion";
-import { AccordionArrow, AccordionContent, AccordionHeader, AccordionItem } from "../ui/Accordion";
-import { ACCORDION_NAVBAR_TABS, ACCORDION_STRUCTURE, ACCORDION_SUB_NAVBAR_TABS_ARRAY } from "../lib/constants";
+import { AccordionContent, AccordionHeader, AccordionItem } from "../ui/Accordion";
+import { ACCORDION_STRUCTURE} from "../lib/constants";
 import { createActiveAccordionNavBarAtom } from "../state/activeAccordionNavBarAtomFamily";
 import { AccordionData, AccordionIds } from "../types/accordion.types";
 import { useRecoilValue } from "recoil";
+import { ChevronDown, ChevronRight } from "lucide-react";
 
 
 const AccordionRenderer = () => {
@@ -15,8 +16,8 @@ const AccordionRenderer = () => {
   const handleToggle = (index:number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-  const mainTab = useRecoilValue(createActiveAccordionNavBarAtom(AccordionIds.MAIN_TAB,ACCORDION_NAVBAR_TABS))
-  const subTab = useRecoilValue(createActiveAccordionNavBarAtom(AccordionIds.SUB_TAB,ACCORDION_SUB_NAVBAR_TABS_ARRAY))
+  const mainTab = useRecoilValue(createActiveAccordionNavBarAtom(AccordionIds.MAIN_TAB))
+  const subTab = useRecoilValue(createActiveAccordionNavBarAtom(AccordionIds.SUB_TAB))
   //@ts-expect-error will figure out a solution later
   const accordionData:AccordionData[] = ACCORDION_STRUCTURE[mainTab]?.subTabs[subTab]?.accordionItems;
   return (
@@ -25,7 +26,12 @@ const AccordionRenderer = () => {
         <AccordionItem key={index}>
           <AccordionHeader onClick={() => handleToggle(index)}>
             {item.accordionTitle}
-            <AccordionArrow isOpen={openIndex === index}>⮟</AccordionArrow>
+            {openIndex === index ? (
+              <ChevronDown size={20} />
+            ) : (
+              <ChevronRight size={20} />
+            )}
+            {/* <AccordionArrow isOpen={openIndex === index}>⮟</AccordionArrow> */}
           </AccordionHeader>
           <AccordionContent isOpen={openIndex === index}>
             <h4>{item.accordionBodyHeading}</h4>
