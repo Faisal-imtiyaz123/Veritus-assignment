@@ -1,10 +1,12 @@
 
 export type AccordionNavbarSubTabsArray = string[]
 export enum AccordionSubNavbarTabs {
-    SubTab1 = "Sub Tab 1",
-    SubTab2 = "Sub Tab 2",
-    SubTab3 = "Sub Tab 3",
-    SubTab4 = "Sub Tab 4",
+    Overview = "Overview",
+    ResearchMethodology = "Research Methodology",
+    DataAnalysis = "Data Analysis",
+    Conclusion = "Conclusion",
+    References = "References",
+    Appendix = "Appendix",
   }
   
   export enum AccordionNavbarTabs {

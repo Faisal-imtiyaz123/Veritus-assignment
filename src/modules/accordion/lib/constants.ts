@@ -1,7 +1,12 @@
-import { AccordionNavbarTabs, AccordionNavBarTabsType, AccordionSubNavbarTabs } from "../types/constants.types";
+import { AccordionNavbarSubTabsArray, AccordionNavbarTabs, AccordionNavBarTabsType, AccordionSubNavbarTabs } from "../types/constants.types";
 
-export const ACCORDION_SUB_NAVBAR_TABS_ARRAY = [
-  "Sub Tab 1", "Sub Tab 2", "Sub Tab 3", "Sub Tab 4", "Sub Tab 5", "Sub Tab 6", "Sub Tab 7", "Sub Tab 8"
+export const ACCORDION_SUB_NAVBAR_TABS_ARRAY: AccordionNavbarSubTabsArray = [
+  AccordionSubNavbarTabs.Overview,
+  AccordionSubNavbarTabs.ResearchMethodology,
+  AccordionSubNavbarTabs.DataAnalysis,
+  AccordionSubNavbarTabs.Conclusion,
+  AccordionSubNavbarTabs.References,
+  AccordionSubNavbarTabs.Appendix,
 ];
 
 export const ACCORDION_NAVBAR_TABS: AccordionNavBarTabsType = [
@@ -20,108 +25,100 @@ export const ACCORDION_NAVBAR_TABS: AccordionNavBarTabsType = [
 
 export const ACCORDION_SUB_NAVBAR_TABS = {
   [AccordionNavbarTabs.QA]: [
-    AccordionSubNavbarTabs.SubTab1,
-    AccordionSubNavbarTabs.SubTab2,
-    AccordionSubNavbarTabs.SubTab3,
-    AccordionSubNavbarTabs.SubTab4
+    AccordionSubNavbarTabs.Overview,
+    AccordionSubNavbarTabs.ResearchMethodology,
+    AccordionSubNavbarTabs.DataAnalysis,
+    AccordionSubNavbarTabs.Conclusion
   ],
   [AccordionNavbarTabs.ManuscriptAnalysis]: [
-    AccordionSubNavbarTabs.SubTab1,
-    AccordionSubNavbarTabs.SubTab2
+    AccordionSubNavbarTabs.References,
+    AccordionSubNavbarTabs.Conclusion
   ],
   [AccordionNavbarTabs.Concise]: [
-    AccordionSubNavbarTabs.SubTab2,
-    AccordionSubNavbarTabs.SubTab3,
-    AccordionSubNavbarTabs.SubTab4
+    AccordionSubNavbarTabs.Overview,
+    AccordionSubNavbarTabs.DataAnalysis,
+    AccordionSubNavbarTabs.References
   ],
   [AccordionNavbarTabs.Introduction]: [
-    AccordionSubNavbarTabs.SubTab1,
-    AccordionSubNavbarTabs.SubTab2
+    AccordionSubNavbarTabs.Conclusion,
+    AccordionSubNavbarTabs.DataAnalysis
   ],
-  // Add similar entries for other tabs...
+
 };
 
 export const ACCORDION_STRUCTURE = {
   [AccordionNavbarTabs.QA]: {
     subTabs: {
-      [AccordionSubNavbarTabs.SubTab1]: {
+      [AccordionSubNavbarTabs.Overview]: {
         heading: "Sub Tab 1 In Detail",
         accordionItems: [
           {
-            accordionTitle: "Accordion 1",
-            accordionBodyHeading: "Accordion 1 Heading",
+            accordionTitle: "Overview of QA Process",
+            accordionBodyHeading: "Introduction to QA",
             accordionBodyContent: [
-              "Accordion 1 Content 1",
-              "Accordion 1 Content 2",
-              "Accordion 1 Content 3",
-              "Accordion 1 Content 4",
-              "Accordion 1 Content 5"
+              "The QA process involves systematic procedures to ensure quality control throughout the project lifecycle.",
+              "It starts with requirement gathering and extends to final product testing, ensuring that the final deliverable meets quality standards.",
+              "Various tools and methodologies are used to automate testing and improve efficiency."
             ],
           },
           {
-            accordionTitle: "Accordion 6",
-            accordionBodyHeading: "Accordion 6 Heading",
+            accordionTitle: "Testing Strategies",
+            accordionBodyHeading: "Key Testing Strategies",
             accordionBodyContent: [
-              "Accordion 6 Content 1",
-              "Accordion 6 Content 2",
-              "Accordion 6 Content 3"
+              "Manual testing involves testing the application by hand, ensuring its functionality matches user expectations.",
+              "Automated testing helps in speeding up the testing process by using scripts and tools to perform repetitive tasks.",
+              "Exploratory testing is an approach where testers explore the application to find potential bugs without pre-defined scripts."
             ],
           },
         ],
       },
-      [AccordionSubNavbarTabs.SubTab2]: {
+      [AccordionSubNavbarTabs.ResearchMethodology]: {
         heading: "Sub Tab 2 In Detail",
         accordionItems: [
           {
-            accordionTitle: "Accordion 2",
-            accordionBodyHeading: "Accordion 2 Heading",
+            accordionTitle: "Test Planning",
+            accordionBodyHeading: "Test Plan Development",
             accordionBodyContent: [
-              "Accordion 2 Content 1",
-              "Accordion 2 Content 2",
-              "Accordion 2 Content 3",
-              "Accordion 2 Content 4",
-              "Accordion 2 Content 5"
+              "A test plan defines the approach to be used for testing, including timelines, resources, and methodologies.",
+              "It is critical to develop a test plan before testing starts to ensure all aspects of the application are covered.",
+              "The plan also outlines the test case development process and defines the metrics for evaluating success."
             ],
           },
           {
-            accordionTitle: "Accordion 7",
-            accordionBodyHeading: "Accordion 7 Heading",
+            accordionTitle: "Test Execution",
+            accordionBodyHeading: "Executing the Tests",
             accordionBodyContent: [
-              "Accordion 7 Content 1",
-              "Accordion 7 Content 2",
-              "Accordion 7 Content 3",
-              "Accordion 7 Content 4"
+              "Test execution involves running the test cases against the application and recording the results.",
+              "This stage is crucial to identifying defects and ensuring the software meets quality requirements.",
+              "The execution phase often includes both functional and non-functional testing (e.g., performance testing)."
             ],
           },
         ],
       },
-      [AccordionSubNavbarTabs.SubTab3]: {
+      [AccordionSubNavbarTabs.DataAnalysis]: {
         heading: "Sub Tab 3 In Detail",
         accordionItems: [
           {
-            accordionTitle: "Accordion 3",
-            accordionBodyHeading: "Accordion 3 Heading",
+            accordionTitle: "Bug Tracking",
+            accordionBodyHeading: "Identifying and Tracking Bugs",
             accordionBodyContent: [
-              "Accordion 3 Content 1",
-              "Accordion 3 Content 2",
-              "Accordion 3 Content 3",
-              "Accordion 3 Content 4"
+              "Bug tracking involves capturing defects in the software during the testing phase.",
+              "A bug tracking system allows QA teams to monitor the status of each bug, from identification to resolution.",
+              "Effective bug tracking ensures that issues are addressed promptly and do not affect the product release timeline."
             ],
           },
         ],
       },
-      [AccordionSubNavbarTabs.SubTab4]: {
+      [AccordionSubNavbarTabs.Conclusion]: {
         heading: "Sub Tab 4 In Detail",
         accordionItems: [
           {
-            accordionTitle: "Accordion 8",
-            accordionBodyHeading: "Accordion 8 Heading",
+            accordionTitle: "Final QA Report",
+            accordionBodyHeading: "Creating the QA Report",
             accordionBodyContent: [
-              "Accordion 8 Content 1",
-              "Accordion 8 Content 2",
-              "Accordion 8 Content 3",
-              "Accordion 8 Content 4",
-              "Accordion 8 Content 5"
+              "The final QA report summarizes the testing efforts, the number of defects found, and the overall quality of the product.",
+              "It includes key metrics such as the pass/fail ratio of tests, defect severity, and the success of test execution.",
+              "This report helps stakeholders make informed decisions about releasing the product."
             ],
           },
         ],
@@ -130,41 +127,39 @@ export const ACCORDION_STRUCTURE = {
   },
   [AccordionNavbarTabs.ManuscriptAnalysis]: {
     subTabs: {
-      [AccordionSubNavbarTabs.SubTab1]: {
+      [AccordionSubNavbarTabs.References]: {
         heading: "Sub Tab 1 Manuscript Analysis",
         accordionItems: [
           {
-            accordionTitle: "Accordion 3",
-            accordionBodyHeading: "Accordion 3 Heading",
+            accordionTitle: "Analyzing Structure of Manuscript",
+            accordionBodyHeading: "Understanding the Structure",
             accordionBodyContent: [
-              "Accordion 3 Content 1",
-              "Accordion 3 Content 2",
-              "Accordion 3 Content 3",
-              "Accordion 3 Content 4"
+              "A well-structured manuscript follows a clear outline, making it easy for the reader to navigate through the research.",
+              "The introduction provides the background of the research, while the methodology section explains the approach taken.",
+              "Data analysis and results are presented in a structured format, followed by the conclusion and references."
             ],
           },
           {
-            accordionTitle: "Accordion 9",
-            accordionBodyHeading: "Accordion 9 Heading",
+            accordionTitle: "Quality of Writing",
+            accordionBodyHeading: "Writing Style and Clarity",
             accordionBodyContent: [
-              "Accordion 9 Content 1",
-              "Accordion 9 Content 2",
-              "Accordion 9 Content 3"
+              "The manuscript should be written clearly and concisely, with a focus on conveying complex ideas simply.",
+              "Sentence structure, grammar, and spelling are important for readability and credibility.",
+              "The writing should be engaging while staying objective and formal."
             ],
           },
         ],
       },
-      [AccordionSubNavbarTabs.SubTab2]: {
+      [AccordionSubNavbarTabs.Conclusion]: {
         heading: "Sub Tab 2 Manuscript Analysis",
         accordionItems: [
           {
-            accordionTitle: "Accordion 4",
-            accordionBodyHeading: "Accordion 4 Heading",
+            accordionTitle: "Analyzing the Literature Review",
+            accordionBodyHeading: "Review of Related Literature",
             accordionBodyContent: [
-              "Accordion 4 Content 1",
-              "Accordion 4 Content 2",
-              "Accordion 4 Content 3",
-              "Accordion 4 Content 4"
+              "The literature review provides a comprehensive analysis of existing research in the field.",
+              "It identifies gaps in current research and shows how the manuscript contributes to advancing knowledge.",
+              "An effective literature review is objective, comprehensive, and well-organized."
             ],
           },
         ],
@@ -173,54 +168,48 @@ export const ACCORDION_STRUCTURE = {
   },
   [AccordionNavbarTabs.Concise]: {
     subTabs: {
-      [AccordionSubNavbarTabs.SubTab2]: {
+      [AccordionSubNavbarTabs.Overview]: {
         heading: "Sub Tab 2 Concise",
         accordionItems: [
           {
-            accordionTitle: "Accordion 4",
-            accordionBodyHeading: "Accordion 4 Heading",
+            accordionTitle: "Summary of Key Findings",
+            accordionBodyHeading: "Findings in Brief",
             accordionBodyContent: [
-              "Accordion 4 Content 1",
-              "Accordion 4 Content 2",
-              "Accordion 4 Content 3",
-              "Accordion 4 Content 4"
+              "The concise section should highlight the most significant findings of the research.",
+              "It should focus on providing key insights without going into excessive detail.",
+              "Summarizing key findings helps readers understand the core message of the research."
             ],
           },
         ],
       },
-      [AccordionSubNavbarTabs.SubTab3]: {
+      [AccordionSubNavbarTabs.DataAnalysis]: {
         heading: "Sub Tab 3 Concise",
         accordionItems: [
           {
-            accordionTitle: "Accordion 5",
-            accordionBodyHeading: "Accordion 5 Heading",
+            accordionTitle: "Recommendations",
+            accordionBodyHeading: "Providing Actionable Recommendations",
             accordionBodyContent: [
-              "Accordion 5 Content 1",
-              "Accordion 5 Content 2",
-              "Accordion 5 Content 3",
-              "Accordion 5 Content 4",
-              "Accordion 5 Content 5"
+              "The recommendations section should offer clear and actionable suggestions based on the research findings.",
+              "These recommendations may be for future research or practical applications in the relevant field.",
+              "The recommendations should be concise but impactful."
             ],
           },
         ],
       },
-      [AccordionSubNavbarTabs.SubTab4]: {
+      [AccordionSubNavbarTabs.Conclusion]: {
         heading: "Sub Tab 4 Concise",
         accordionItems: [
           {
-            accordionTitle: "Accordion 10",
-            accordionBodyHeading: "Accordion 10 Heading",
+            accordionTitle: "Conclusion and Future Work",
+            accordionBodyHeading: "Concluding the Research",
             accordionBodyContent: [
-              "Accordion 10 Content 1",
-              "Accordion 10 Content 2",
-              "Accordion 10 Content 3",
-              "Accordion 10 Content 4",
-              "Accordion 10 Content 5"
+              "The conclusion summarizes the research and reflects on its significance.",
+              "It is important to briefly revisit the research question and address whether it was answered.",
+              "Future work may involve exploring unanswered questions or refining methodologies."
             ],
           },
         ],
       },
     },
   },
-  // Add more structures as necessary...
 };

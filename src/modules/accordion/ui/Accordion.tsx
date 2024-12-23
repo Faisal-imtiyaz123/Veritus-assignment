@@ -67,26 +67,23 @@ export const AccordionContent = styled.div<AccordionProps>`
   }
 
   span {
-    font-size: 24px;
+    font-size: 21px;
     font-weight: normal;
     display: block;
     margin-bottom: 8px;
   }
-  div{
-    margin-top: 8px;
-  }
-
-  div {
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-
-    li {
-      font-size: 18px;
-      line-height: 1.4;
-      margin-bottom: 4px;
-      margin-left: 10px;
-    }
-  }
 `;
+
+export const AccordionContentLineDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-size: 17px;
+  gap: 8px;
+  align-items: top;
+  margin-top: 8px;
+`;
+
+export const CircleContainer = styled.div`
+display: flex;
+margin-top: 7px;
+`
